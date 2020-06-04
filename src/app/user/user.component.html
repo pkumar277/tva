@@ -1,1 +1,31 @@
-<p>user works!</p>
+<section class="maincontainer clr">
+  <div class="createuser"><a href="">CREATE USER</a></div>
+  <table id="example" class="display userTable" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="width:100%">
+      <thead>
+          <tr>
+              <th>Full Name</th>
+              <th class="secondcolumn">Username/Short ID</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Account Name</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let person of persons">
+              <td>{{person.name}}</td>
+              <td>{{person.username}}</td>
+              <td>{{person.email}}</td>
+              <td>{{person.role}}</td>
+              <td>{{person.clientName}}</td>
+              <td class="accountmap" title="Account Mappting" onclick="document.getElementById('account01').style.display='block'"></td>
+              <td class="revokemap" title="Revoke Mapping" onclick="document.getElementById('revoke01').style.display='block'"></td>
+              <td class="edit-icon" title="Edit" onclick="document.getElementById('edit01').style.display='block'"></td>
+              <td class="deleteicon" title="Delete" onclick="document.getElementById('delete01').style.display='block'"></td>
+          </tr>
+        </tbody>
+      </table>
+</section>

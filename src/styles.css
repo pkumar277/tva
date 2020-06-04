@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  margin:0px;
+      overflow-y: hidden!important;
+      overflow-x: hidden;
+
+
+}
+
+html, body {
+  max-width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+   font-family: "GT-Walsheim-Pro-Regular";
+}
+
+
+.has-error{
+  border: 1px solid red !important;
+  color: red!important;
+}
+
+.dataTables_length{float:right !important;}
+.dataTables_wrapper .dataTables_info{padding-top:0px !important; padding-bottom:20px;}
+
+
+.saveBtn{
+  background-color: #000;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+  width: 104px;
+  height: 40px;
+  margin-top: 13px;
+  margin-right: 20px;
+  border-radius:5px;
+}
+
+.passwordButton{
+  background-color: #666666;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 13px;
+  width: 222px;
+  height: 40px;
+  margin-right: 18px;
+}
+
+.save{
+  width: 20px;
+  height: 20px;
+  margin-right: 11px;
+}
+
+
+.cancelBtn{
+  background-color: #666666;
+
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 13px;
+  height: 40px;
+  margin-right: 18px;
+}
+
+.glyphicon-pencil, .glyphicon-refresh{
+  padding-right: 5px;
+}
+a.paginate_button.current{ border-radius:5px !important;  }
+.dataTables_paginate .paginate_button{border-radius:5px !important; padding:0.1em 0.8em; color:#fff !important}
+
+@media only screen
+and (min-width : 320px) and (max-width: 767px) {
+  html, body {
+      max-width: 100%;
+     overflow-x: hidden!important;
+      /* background-color: #020b1a; */
+  }
+}
+
+
+
+
