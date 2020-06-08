@@ -1,3 +1,4 @@
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -15,7 +16,7 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateuserComponent } from './createuser/createuser.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { CreateuserComponent } from './createuser/createuser.component';
     routing,
     DataTablesModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule
 
   ],
   providers: [],

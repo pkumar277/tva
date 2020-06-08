@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./createuser.component.css']
 })
 export class CreateuserComponent implements OnInit {
-
+  selected = 'option0';
   constructor() { }
 
   ngOnInit() {

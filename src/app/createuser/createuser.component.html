@@ -5,16 +5,15 @@
             <input type="text" id="name" name="Name" class="marginright30" value="" placeholder="Name *">
             <input type="text"  name="Username" placeholder="Username/Short ID *">
             <input type="email" id="email"class="marginright30" placeholder="Email *" name="email">
-            <div class="custom-select select-createuser frt">
-                     <select>          <option value="0">Select Role *</option>
-                                       <option value="1">TVA Admin</option>
-                                        <option value="2">TVA User</option>
-                                        <option value="3">TVA Administrator</option>
-                                        <option value="4">TVA User Upload</option>
-                                        <option value="5">TVA</option>
-                    </select>
-              </div>
-              <br class="clr" />
+            <mat-form-field>
+              <mat-select [(value)]="selected">
+                <mat-option value="option0">Select Role *</mat-option>
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+                          <br class="clr" />
               <input type="password" id="pwd" class="marginright30" placeholder="Password *" name="pswd">
               <input type="password" id="Confirmpwd" placeholder="Confirm Password *" name="Confirm Password">
           </div>
