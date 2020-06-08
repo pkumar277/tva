@@ -898,7 +898,7 @@ opacity: 1;
 }
 
 .dataTables_wrapper .dataTables_info{color:#666666; font-weight:bold; font-size:24px;}
-.dataTables_wrapper .dataTables_paginate {text-align: center; float: none; padding-top:30px;}
+.dataTables_wrapper .dataTables_paginate {text-align: center; float: none; padding-top:30px;padding-bottom: 20px;}
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{background:#000; color:#fff !important;
 padding:15px 21px !important; border:1px solid #000;}
 .dataTables_wrapper .dataTables_paginate .paginate_button{color:#000 !important; padding:15px 21px !important; border: 1px solid transparent; font-weight:bold;}
@@ -1209,7 +1209,6 @@ option:focus{background:#000 !important;}
   padding:20px 20px 0px;
   display: flex;
   align-items: stretch;
-  margin-top:25px;
 }
 .footer-terms{
   font-size: 16px;
@@ -1272,4 +1271,120 @@ html, body { height: 100%; }
 .mat-form-field-infix{border:none; width:270px !important; background:#f5f5f5; padding:16px 16px !important; font-weight:bold; border:1px solid #f5f5f5 !important;}
 .mat-select-value-text{color:#666}
 .mat-select-panel{border:2px solid #000;}
+
+
+
+/*** Vasanth Style **/
+
+
+.login-form{
+  width: 50%;
+  padding-top: 100px;
+  padding-left: 50px;
+  
+}
+
+.padbottom-40{
+  padding-bottom: 40px;
+}
+
+.padbottom-25{
+  padding-bottom: 25px;
+}
+
+.login-form input{
+  background-color: #F5F5F5;
+  font-weight: normal;
+  width: 348px;
+  height: 46px;
+  padding: 16px;
+  border: none;
+  color: #666666;
+}
+
+.login-form input[type=text]:focus {
+  outline: none !important;
+  border:2px solid #000000;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.login-form input{
+  background-color: #F5F5F5;
+  font-weight: normal;
+  width: 348px;
+  height: 46px;
+  padding: 0px 16px;
+  border: none;
+  color: #666666;
+}
+
+.login-form input[type=password]:focus {
+  outline: none !important;
+  border:2px solid #000000;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+
+.login-form button{
+  background-color: #FFED00;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  width: 162px;
+  height: 54px;
+  border: none;
+}
+
+.login-form button:hover{
+  background-color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFED00;
+  text-transform: uppercase;
+  width: 162px;
+  height: 54px;
+  border: none;
+}
+
+.login-form button:after, :before{
+  outline: none!important;
+  border: none;
+  box-sizing:none;
+}
+
+.login-form .is-invalidborder {
+  border: 2px solid red;
+}
+
+@media (min-height:796px) {
+  footer{height:400px !important}
+}
+
+
+
+@media (min-width:1300px) and (min-height:800px) {
+  body{
+      overflow-y: hidden;
+  }
+
+ 
+}
+
+
+
+
+@media (min-width:1281px) {
+  
+
+  .login-sec{
+      
+      background-position-x: right;
+      background-repeat: no-repeat;
+  }
+}
 

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import { User } from '../user';
+import { LoginService } from '../../services/login.service'
 declare var jquery: any;
 declare var $: any;
 
@@ -14,6 +15,7 @@ declare var $: any;
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  userdata: string;
    name: string;
    username: string;
    email: string;
@@ -25,7 +27,7 @@ export class UserComponent implements OnInit {
    users: User[];
    dtTrigger: Subject<any> = new Subject<any>();
    service: any;
-  constructor(private http: Http) { }
+  constructor(private http: Http, private loginservice: LoginService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -65,6 +67,8 @@ export class UserComponent implements OnInit {
       console.log(persons);
       this.dtTrigger.next();
     })
+
+    this.userdata = this.loginservice.currentUserValue.username;
 
   };
 

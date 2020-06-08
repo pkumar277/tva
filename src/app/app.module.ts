@@ -17,6 +17,9 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginService } from '../services/login.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DeleteuserComponent,
     EdituserComponent,
     CreateuserComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +43,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,    
+    FormsModule
 
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
