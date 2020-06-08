@@ -148,7 +148,7 @@ display: inline-block;
 }
 ul.adminlink li a.changepassword {
 background: url(../images/ChangePassword_NormalState.png) no-repeat left top;
-height: 20px;
+height: 24px;
 font-size: 14px;
 padding: 4px 0px 0px 27px;
 display: inline-block;
@@ -156,7 +156,7 @@ text-decoration: none;
 }
 ul.adminlink li a.changepassword:hover{
 background: url(../images/ChangePassword_HoverState.png) no-repeat left top;
-height: 20px;
+height: 24px;
 font-size: 14px;
 padding: 4px 0px 0px 27px;
 display: inline-block;
@@ -165,7 +165,7 @@ text-decoration: none;
 
 ul.adminlink li a.logout {
 background: url(../images/Logout_NormalState.png) no-repeat left top;
-height: 19px;
+height:24px;
 font-size: 14px;
 padding: 5px 0px 0px 30px;
 font-weight:bold;
@@ -174,7 +174,7 @@ text-decoration: none;
 }
 ul.adminlink li a.logout:hover {
 background: url(../images/Logout_HoverState.png) no-repeat left top;
-height: 19px;
+height: 24px;
 font-size: 14px;
 font-weight:bold;
 padding: 5px 0px 0px 30px;
@@ -250,7 +250,7 @@ font-size:14px;
 .nav ul {
 position: absolute;
 white-space: nowrap;
-z-index: 1;
+z-index: 10;
 left: -99999em;
 background: #fff;
 border:1px solid #d9d9d9;
@@ -936,12 +936,12 @@ table.dataTable tbody td{padding-top:15px; padding-bottom:15px;}
 table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1{background:#fff;}
 table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1{background:transparent;}
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover{background: #f6f6f6;}
-div.createuser a{background:url(../images/CreateUser_NormalState.png) no-repeat left center; padding:8px 35px; font-weight:bold; float: right;
-  margin-right: 280px;  margin-bottom: -65px; margin-top:24px;  color:#000; text-decoration:none;}
-div.createuser a:hover{background:url(../images/CreateUser_HoverlState.png) no-repeat left center; padding:8px 35px; font-weight:bold; float: right;
-  margin-right:280px; margin-bottom: -65px; margin-top:24px; color:#808080}
+div.createuser a{background:url(../images/CreateUser_NormalState.png) no-repeat left center; padding:8px 35px; font-weight:bold;
+  margin-right: 280px; float:right;  display:inline-block; margin-top:24px; margin-bottom:-64px;  color:#000; text-decoration:none; cursor: pointer; position: relative; z-index:2;}
+div.createuser a:hover{background:url(../images/CreateUser_HoverlState.png) no-repeat left center; float:right; margin-bottom:-64px; display: inline-block; padding:8px 35px; font-weight:bold;
+  margin-right:280px; margin-top:24px; color:#808080; cursor: pointer;}
 .dataTables_wrapper .dataTables_filter{padding-top:20px; padding-bottom:18px; }
-.dataTables_filter input{background:#f5f5f5 url(../images/search-icon.png) no-repeat right center; color:#666; font-size:14px; width:280px; padding:13px;
+.dataTables_filter input{background:#f5f5f5 url(../images/search-icon.png) no-repeat right center; color:#666; font-size:14px; width:280px; padding:12px;
 font-weight:bold; border:2px solid #f5f5f5; outline:none;  padding-right:65px;}
 .dataTables_filter input:focus {background-color: #fff; border:2px solid #000; font-weight:bold; color:#000 !important; }
 ::-webkit-input-placeholder{color:#666}
@@ -971,6 +971,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 .modal-header{
   height: 6px;
   background-color: #000000;
+  padding:0px;
 }
 
 .modal-container{
@@ -978,7 +979,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 }
 
 .modal-head{
-  font-weight: bold;
+font-weight: bold;
 font-size: 30px;
 padding-bottom:30px;
 }
@@ -1007,7 +1008,7 @@ padding-bottom:30px;
   background-color: #F5F5F5;
   font-size: 14px;
   font-weight: normal;
-  width: 384px;
+  width: 420px;
   height: 44px;
   padding:0px 16px;
   border: none;
@@ -1095,9 +1096,10 @@ padding-bottom:20px;
 }
 
 
-.mainmodal{z-index:3;display:none;padding-top:75px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(255, 250, 250, 0.9);}
+.modal{padding-top:50px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(255, 250, 250, 0.9);}
 .modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0; width: 534px;
-  box-shadow:1px 1px 1px 1px #ccc; border-top:none; border-left:1px solid #ccc;}
+  box-shadow:1px 1px 1px 1px #ccc; border:none; border-radius:none; border-left:1px solid #ccc;}
+.modal.changepassword{width:534px;}
 .modal-button{margin-top:20px;}
 .edit-modal{width:710px;}
 .delete-modal{width:486px}
@@ -1109,18 +1111,19 @@ padding-bottom:20px;
 .tooltip {
 position: relative;
 display: inline-block;
+opacity:inherit;
 }
 
 .tooltip .tooltiptext {
 visibility: hidden;
-width: 320px;
+width: 380px;
 background-color: #f2f2f2;
 color: #000;
 text-align: left;
 padding: 15px;
 position: absolute;
 z-index: 1;
-top: 125%;
+top: 136%;
 left: 30%;
 margin-left: -315px;
 opacity: 0;
@@ -1135,7 +1138,7 @@ font-weight:bold;
 content: "";
 position: absolute;
 bottom: 100%;
-left: 88%;
+left: 81%;
 border-width:10px;
 border-style: solid;
 width: 0;
@@ -1146,7 +1149,7 @@ border-color: transparent transparent #000 transparent;
 content: "";
 position: absolute;
 bottom: 100%;
-left: 88%;
+left: 81%;
 border-width: 10px;
 border-style: solid;
 width: 0;
@@ -1205,8 +1208,8 @@ option:focus{background:#000 !important;}
   color: #ffffff;
   padding:20px 20px 0px;
   display: flex;
-align-items: stretch;
-margin-top:25px;
+  align-items: stretch;
+  margin-top:25px;
 }
 .footer-terms{
   font-size: 16px;
@@ -1260,3 +1263,9 @@ list-style-type: none;
   width: 100%;
   transition: width .3s;
 }
+
+
+/*****Modal CSS***/
+
+
+

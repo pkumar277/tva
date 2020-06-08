@@ -47,7 +47,7 @@ export class UserComponent implements OnInit {
             }
 },
 
-    dom: '<"top"i<"createuser">f>rt<"bottom"lp><"clear">',
+    dom: '<"top"if>rt<"bottom"lp><"clear">',
     paging:   true,
     ordering: true,
     info:     true,

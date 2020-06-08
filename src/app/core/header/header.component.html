@@ -16,7 +16,7 @@
           </div>
           <div class="frt">
               <ul class="adminlink">
-                  <li><a href="#" class="changepassword" onclick="document.getElementById('id01').style.display='block'"> CHANGE PASSWORD</a></li>
+                  <li><a href="#" class="changepassword" data-toggle="modal" data-backdrop="static" data-target="#myModal2"> CHANGE PASSWORD</a></li>
                   <li><a class="logout" href="#"> LOGOUT</a></li>
               </ul>
           </div>
@@ -24,3 +24,10 @@
       </div>
   </div>
 </header>
+<div class="modal right" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
+          <app-changepassword></app-changepassword>
+        </div>
+      </div>
+   </div>

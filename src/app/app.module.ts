@@ -10,6 +10,12 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateuserComponent } from './createuser/createuser.component';
+
 
 @NgModule({
   declarations: [
@@ -18,14 +24,19 @@ import { DataTablesModule } from 'angular-datatables';
     UserComponent,
     HeaderComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    ChangepasswordComponent,
+    DeleteuserComponent,
+    EdituserComponent,
+    CreateuserComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     routing,
     DataTablesModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
