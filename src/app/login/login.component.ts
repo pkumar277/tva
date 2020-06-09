@@ -52,10 +52,4 @@ export class LoginComponent implements OnInit {
   }
 
   
-  Logout(){
-
-    localStorage.setItem('currentUser', null);
-
-  }
-
 }
