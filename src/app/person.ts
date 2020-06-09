@@ -1,7 +1,8 @@
 export class Person {
     id: number;
-    fullName: string;
-    userName: string;
+    name: string;
+    username: string;
     email: string;
-    accountName: string;
+    clientName: string;
+    role: string;
   }

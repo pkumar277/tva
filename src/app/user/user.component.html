@@ -14,10 +14,11 @@
               <th></th>
               <th></th>
               <th></th>
+
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let person of persons" [attr.id]="person.id">
+          <tr *ngFor="let person of persons">
               <td>{{person.name}}</td>
               <td>{{person.username}}</td>
               <td>{{person.email}}</td>
@@ -26,7 +27,7 @@
               <td class="accountmap" title="Account Mappting" onclick="document.getElementById('account01').style.display='block'"></td>
               <td class="revokemap" title="Revoke Mapping" onclick="document.getElementById('revoke01').style.display='block'"></td>
               <td class="edit-icon" title="Edit" data-toggle="modal" data-backdrop="static" data-target="#editModal"></td>
-              <td class="deleteicon" title="Delete" data-toggle="modal" data-backdrop="static" data-target="#deleteModal"></td>
+              <td class="deleteicon" title="Delete" data-toggle="modal"  data-backdrop="static" (click)="onSelect(person)" data-target="#deleteModal"></td>
           </tr>
         </tbody>
       </table>
@@ -57,7 +58,10 @@
 <div class="modal right" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabe">
   <div class="modal-dialog" role="document">
      <div class="modal-content delete-modal">
-          <app-deleteuser></app-deleteuser>
+      <app-deleteuser
+      [username]="username"
+      [id]="id">
+    </app-deleteuser>
       </div>
   </div>
 </div>

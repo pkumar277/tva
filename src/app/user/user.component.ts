@@ -25,6 +25,7 @@ export class UserComponent implements OnInit {
    persons: Person[] = [];
    userList: any;
    users: User[];
+   id: number;
    dtTrigger: Subject<any> = new Subject<any>();
    service: any;
   constructor(private http: Http, private loginservice: LoginService) { }
@@ -77,5 +78,9 @@ private extractData(res: Response) {
     return body || {};
   }
 
+  onSelect(selectedItem: any) {
+    this.username = selectedItem.name;
+    this.id = selectedItem.id;
 
+  }
 }
