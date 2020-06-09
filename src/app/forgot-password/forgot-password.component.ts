@@ -10,11 +10,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent {
-  public email;
-  public password;
-  public invalidEmail = false;
-  public modalVisible = true;
-  public modalSuccess = false;
+  email:string;
+  password:string;
+  invalidEmail:boolean = false;
+  modalVisible:boolean = true;
+  modalSuccess:boolean = false;
+  submitted:boolean = false;
 
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
 
@@ -27,6 +28,8 @@ export class ForgotPasswordComponent {
   }
 
   ForgotPassword() {
+
+    this.submitted = true;
     //console.log(this.email)
     this.loginService.forgot(this.email).subscribe(user => {
       
@@ -35,9 +38,11 @@ export class ForgotPasswordComponent {
           //console.log(user)
           this.modalVisible = false;
           this.modalSuccess = true;
-        } else {
+          
+        } else if(this.email) {
           this.invalidEmail = true;
           
+
         }
       });
   }
