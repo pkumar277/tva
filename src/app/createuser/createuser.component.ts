@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../_helpers/must-match.validator';
 import { Person } from '../person';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-createuser',
@@ -13,7 +14,7 @@ export class CreateuserComponent implements OnInit {
   createuserform: FormGroup;
   selected = 'option0';
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -31,11 +32,19 @@ export class CreateuserComponent implements OnInit {
   }
 
   get f() { return this.createuserform.controls; }
+
   onSubmit(){
     this.submitted = true;
+  ///alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.createuserform.value, null, 4));
 
+  this.http.post('http://localhost:3000/users/',
+  {name: this.createuserform.value.Name, username: this.createuserform.value.Username, email: this.createuserform.value.Email, role: this.createuserform.value.role, password: this.createuserform.value.password})
+  .subscribe(persons => { console.log(persons); });
 
   }
+
+
+
 
 
   onReset() {
