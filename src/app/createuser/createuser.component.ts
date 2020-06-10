@@ -35,6 +35,10 @@ export class CreateuserComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
+    if (this.createuserform.invalid) {
+      return;
+
+    }
   ///alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.createuserform.value, null, 4));
 
   this.http.post('http://localhost:3000/users/',
