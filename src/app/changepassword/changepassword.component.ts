@@ -103,32 +103,12 @@ get f() { return this.changepasswordform.controls; }
     }
     // display form values on success
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.changepasswordform.value, null, 4));
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
 
-    //this.updatedRow= this.persons.filter(_ => this.userid);
 
-      this.http.post('http://localhost:3000/users/' + this.userid, httpOptions)
-          .map((response:Response) => response.json())
-        .subscribe(persons =>{
-          this.userdata = this.changepasswordform.value.password;
-        console.log(this.userdata);
-      })
+  this.http.patch('http://localhost:3000/users/' + this.userid, {password: this.changepasswordform.value.password})
+  .subscribe(persons =>{ console.log(persons);})
 
-/*
-this.http.post<any>('http://localhost:3000/users/' + this.persons.id)
-.map((response:Response) => response.json())
-.subscribe(persons => {
-  console.log(persons);
-  this.userdata = this.changepasswordform.value.password;
-  console.log(this.changepasswordform.value.password)
-  console.log(this.userdata);
-})
 
-*/
 }
 onReset() {
   this.submitted = false;
