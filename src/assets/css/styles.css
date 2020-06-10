@@ -52,6 +52,7 @@ padding-left: 20px;
 .padbottom-50{padding-bottom:50px;}
 .marginlft20{margin-left:20px;}
 .marginright10{margin-right:10px;}
+.margintop20{margin-top:20px;}
 br.clr {
 height: 1px;
 padding: 0px;
@@ -430,67 +431,7 @@ margin-bottom: 8px;
 .editBtn {
 cursor: pointer;
 }
-.elsie-modal {
-z-index: 3;
-display: none;
-padding-top: 60px;
-position: fixed;
-left: 0;
-top: 0px;
-width: 100%;
-height: 100%;
-overflow: auto;
-background-color: #fff;
-background-color: rgba(248, 244, 244, 0.9);
 
-}
-.filter-modal{
-z-index: 3;
-display: none;
-padding-top: 60px;
-position: fixed;
-right: 0;
-top: 0px;
-width: 100%;
-height: 100%;
-overflow: auto;
-background-color: #fff;
-background-color: rgba(248, 244, 244, 0.9);
-}
-
-.elsie-modal-content {
-margin: auto;
-background-color: #fff;
-position: relative;
-outline: 0;
-width: 700px;
-border: 1px solid #000;
-border-top: 5px solid #000;
-padding: 25px 40px;
-}
-.elsie-modal-filtercontent {
-margin: auto;
-background-color: #fff;
-position: relative;
-outline: 0;
-width: 560px;
-border: 1px solid #000;
-border-top: 5px solid #000;
-padding: 25px 40px;
-margin-right:0px;
-min-height:700px;
-
-}
-
-.elsie-animate-left {
-position: relative;
-animation: animateleft 0.4s;
-}
-.elsie-animate-right {
-position: relative;
-animation: animateright 0.4s;
-border:1px solid #c5c5c5;
-}
 @keyframes animateleft {
 from {
   left: -300px;
@@ -1268,12 +1209,31 @@ list-style-type: none;
 html, body { height: 100%; }
 .mat-form-field{font-family:  'GT Walsheim Pro Regular' !important;}
 .cdk-overlay-container{position: fixed; z-index: 99999;}
-.mat-form-field-infix{border:none; width:270px !important; background:#f5f5f5; padding:16px 16px !important; font-weight:bold; border:1px solid #f5f5f5 !important;}
+.mat-form-field-infix{border:none; width:310px !important; background:#f5f5f5; padding:16px 16px !important; font-weight:bold; border:1px solid #f5f5f5 !important;}
 .mat-select-value-text{color:#666}
 .mat-select-panel{border:2px solid #000;}
 
+.mat-form-field-appearance-legacy .mat-form-field-underline{background-color:transparent}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  height:0px;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+  background-color: #000;
+
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #000;
+  border:1px solid #000;
+}
 
 
+.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow{color: #000;}
+.mat-select-arrow {
+  color: #000;
+}
+
+.createwidth{width:340px;}
+.createwidthright{width:280px;}
 /*** Vasanth Style **/
 
 
@@ -1281,7 +1241,7 @@ html, body { height: 100%; }
   width: 50%;
   padding-top: 100px;
   padding-left: 50px;
-  
+
 }
 
 .padbottom-40{
@@ -1372,19 +1332,21 @@ html, body { height: 100%; }
       overflow-y: hidden;
   }
 
- 
+
 }
 
 
 
 
 @media (min-width:1281px) {
-  
+
 
   .login-sec{
-      
+
       background-position-x: right;
       background-repeat: no-repeat;
   }
 }
 
+#createModal .text-danger{width:90% }
+#createModal .Editinput input{width:310px}

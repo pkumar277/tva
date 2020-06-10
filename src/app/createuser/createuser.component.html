@@ -1,24 +1,62 @@
 <div class="modal-header"></div>
 <div class="modal-container">
+  <form [formGroup]="createuserform" (ngSubmit)="onSubmit()">
     <div class="modal-head">Create User</div>
-        <div class="Editinput">
-            <input type="text" id="name" name="Name" class="marginright30" value="" placeholder="Name *">
-            <input type="text"  name="Username" placeholder="Username/Short ID *">
-            <input type="email" id="email"class="marginright30" placeholder="Email *" name="email">
+        <div class="Editinput flt">
+            <div class="createwidth"><input type="text" id="name" name="Name" formControlName="Name" class="marginright30" value="" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" placeholder="Name *">
+            <div *ngIf="submitted && f.Name.errors" class="text-danger">
+                  <div *ngIf="f.Name.errors.required">Name is required</div>
+            </div>
+             </div>
+             <div class="createwidth">
+             <input type="email" id="email" class="marginright30"  placeholder="Email *" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+             <div *ngIf="submitted && f.Email.errors" class="text-danger">
+               <div *ngIf="f.Email.errors.required">Email is required</div>
+             </div>
+             </div>
+             <div class="createwidth">
+             <input type="password"  id="newPswrd" [(ngModel)]="model.password"   placeholder="Password *" minlength="8" ng-pattern-restrict   name = "newPswrd" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+             <div *ngIf="submitted && f.password.errors" class="text-danger">
+               <div *ngIf="f.password.errors.required">Password is required</div>
+               <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+              </div>
+              </div>
+
+        </div>
+        <div class="Editinput flt">
+          <div class="createwidthright">
+            <input type="text"  name="Username" placeholder="Username/Short ID *" formControlName="Username" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }">
+            <div *ngIf="submitted && f.Username.errors" class="text-danger">
+              <div *ngIf="f.Username.errors.required">User Name is required</div>
+            </div>
+            </div>
+            <div class="createwidthright">
             <mat-form-field>
-              <mat-select [(value)]="selected">
-                <mat-option value="option0">Select Role *</mat-option>
+              <mat-select [(value)]="selected" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
+                <mat-option value="">Select Role *</mat-option>
                 <mat-option value="option1">Option 1</mat-option>
                 <mat-option value="option2">Option 2</mat-option>
                 <mat-option value="option3">Option 3</mat-option>
               </mat-select>
             </mat-form-field>
-                          <br class="clr" />
-              <input type="password" id="pwd" class="marginright30" placeholder="Password *" name="pswd">
-              <input type="password" id="Confirmpwd" placeholder="Confirm Password *" name="Confirm Password">
+             <div *ngIf="submitted && f.role.errors" class="text-danger">
+                 <div *ngIf="f.role.errors.required">Role is required</div>
+             </div>
           </div>
-          <div class="modal-button">
-            <button class="secondaryBtn" onclick="document.getElementById('create01').style.display='none'">CREATE</button>
-            <button class="secondaryBtnbdr" data-dismiss="modal">CANCEL</button>
+
+          <div class="createwidthright">
+               <input type="password" name="Confirm Password" placeholder="Confirm Password *" id="cfrmPswrd" formControlName="confirmPassword" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"/>
+               <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+                 <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                 <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords and Confirm Password not match</div>
+              </div>
           </div>
+        </div>
+
+        <br class="clr" />
+          <div class="modal-button Btnbox">
+            <button class="secondaryBtn">CREATE</button>
+            <button class="secondaryBtnbdr" (click)="onReset()" data-dismiss="modal">CANCEL</button>
+          </div>
+</form>
 </div>

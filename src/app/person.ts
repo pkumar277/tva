@@ -5,4 +5,9 @@ export class Person {
     email: string;
     clientName: string;
     role: string;
+
+    /***Create User */
+    Name: string;
+    Username: string;
+    Email: string;
   }
