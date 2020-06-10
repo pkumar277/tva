@@ -25,8 +25,8 @@ export class ChangepasswordComponent implements OnInit {
   submitted = false;
   danger_numeric: boolean = false;
   danger_specialChar: boolean = false;
-  confirmDisabled: boolean= true;
-  danger_alpha:boolean = false;
+  confirmDisabled: boolean = true;
+  danger_alpha: boolean = false;
   modalVisible = true;
   modalSuccess = false;
   persons: Person[] = [];
@@ -54,30 +54,30 @@ checkoldPassword(str: any){
 checkPassword(str: any){
   var regEx = /^(?=(?:[^a-z]*[a-z]){2})(?=(?:[^A-Z]*[A-Z]){2})(?=(?:[^0-9]*[0-9]){2})(?=.*[!-\/:-@\[-`{-~]).{8,}$/i;
   var regNum = /([0-9])/;
-  var regAlpha= /([a-z])/;
-  var regAlphaCaps= /([A-Z])/;
+  var regAlpha = /([a-z])/;
+  var regAlphaCaps = /([A-Z])/;
   var regChar = /([!@#$%^&*()~_])/;
-  var regAlphaNum= /([a-z,A-Z,0-9])/;
-  if(regEx.test(str)) {
-    this.confirmDisabled=false;
+  var regAlphaNum = /([a-z,A-Z,0-9])/;
+  if (regEx.test(str)) {
+    this.confirmDisabled = false;
 
   }
 
-if(regNum.test(str)) {
+  if (regNum.test(str)) {
   this.danger_numeric = false;
 }
 else{
   this.danger_numeric  = true;
 
 }
-if(regChar.test(str)) {
+  if (regChar.test(str)) {
   this.danger_specialChar = false;
 }
 else{
   this.danger_specialChar  = true;
 
 }
-if((regAlpha.test(str)) && (regAlphaCaps.test(str))) {
+  if ((regAlpha.test(str)) && (regAlphaCaps.test(str))) {
   this.danger_alpha = false;
 }
 else{
@@ -92,7 +92,7 @@ get f() { return this.changepasswordform.controls; }
     if (this.changepasswordform.invalid || this.changepasswordform.value.OldPassword !== this.userdata) {
       this.oldpass = true;
       this.modalSuccess = false;
-        return;
+      return;
 
     }
     else{
@@ -105,8 +105,8 @@ get f() { return this.changepasswordform.controls; }
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.changepasswordform.value, null, 4));
 
 
-  this.http.patch('http://localhost:3000/users/' + this.userid, {password: this.changepasswordform.value.password})
-  .subscribe(persons =>{ console.log(persons);})
+    this.http.patch('http://localhost:3000/users/' + this.userid, {password: this.changepasswordform.value.password})
+  .subscribe(persons => { console.log(persons); });
 
 
 }
