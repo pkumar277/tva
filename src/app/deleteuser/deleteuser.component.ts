@@ -1,7 +1,6 @@
 import { Person } from '../person';
 import { Component, OnInit, Input } from '@angular/core';
-import {Http, Response} from '@angular/http';
-
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-deleteuser',
   templateUrl: './deleteuser.component.html',
@@ -10,10 +9,10 @@ import {Http, Response} from '@angular/http';
 export class DeleteuserComponent implements OnInit {
 
   selectedRow: Person[];
-  @Input() username: string;
+  @Input() name: string;
   @Input() id: string;
   persons: Person[] = [];
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }

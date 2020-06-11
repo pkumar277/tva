@@ -5,14 +5,14 @@
           <div class="flt Editinput">
               <div class="lblinputbox">
               <label for="name" >Name</label>
-              <input type="text" id="name" class="marginright30" name="name" formControlName="Name" value="Imran Ali" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }">
-                <div *ngIf="submitted && f.Name.errors" class="text-danger">
-                  <div *ngIf="f.Name.errors.required">Name is required</div>
+              <input type="text" id="name" class="marginright30" name="name" formControlName="name" value={{name}} [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                <div *ngIf="submitted && f.name.errors" class="text-danger">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
                 </div>
               </div>
               <div class="lblinputbox">
               <label for="email">Email</label>
-              <input type="email" id="email" class="marginright30"  value="jammalamadugu.imran-ali@dxc.com" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+              <input type="email" id="email" class="marginright30" name="email" value={{Email}} formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
                 <div *ngIf="submitted && f.Email.errors" class="text-danger">
                   <div *ngIf="f.Email.errors.required">Email is required</div>
                   <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
@@ -30,12 +30,12 @@
            <div class="frt Editinput">
             <div class="lblinputbox">
               <label for="name">Username/Short ID</label>
-              <input type="text"  name="Username" disabled value="jammalamadugu">
+              <input type="text" name="username" formControlName="username" disabled value={{username}}>
             </div>
             <div class="lblinputbox">
               <label for="email">Role</label>
                 <mat-form-field>
-                  <mat-select [(value)]="selected" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
+                  <mat-select [(value)]="selected" formControlName="role"  [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
                     <mat-option value="">TVA User</mat-option>
                     <mat-option value="option1">TVA Admin</mat-option>
                     <mat-option value="option2">TVA Role</mat-option>

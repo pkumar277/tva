@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import { User } from '../user';
-import { LoginService } from '../../services/login.service'
+import { LoginService } from '../../services/login.service';
 declare var jquery: any;
 declare var $: any;
 
@@ -79,8 +79,17 @@ private extractData(res: Response) {
   }
 
   onSelect(selectedItem: any) {
-    this.username = selectedItem.name;
+    this.name = selectedItem.name;
     this.id = selectedItem.id;
+
+  }
+
+  onSelectedit(selectedItem: any) {
+    this.name = selectedItem.name;
+    this.username = selectedItem.username;
+    this.id = selectedItem.id;
+    this.role = selectedItem.role;
+    this.email = selectedItem.email;
 
   }
 }

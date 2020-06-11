@@ -26,7 +26,7 @@
               <td>{{person.clientName}}</td>
               <td class="accountmap" title="Account Mappting" onclick="document.getElementById('account01').style.display='block'"></td>
               <td class="revokemap" title="Revoke Mapping" onclick="document.getElementById('revoke01').style.display='block'"></td>
-              <td class="edit-icon" title="Edit" data-toggle="modal" data-backdrop="static" data-target="#editModal"></td>
+              <td class="edit-icon" title="Edit" data-toggle="modal" data-backdrop="static" (click)="onSelectedit(person)" data-target="#editModal"></td>
               <td class="deleteicon" title="Delete" data-toggle="modal"  data-backdrop="static" (click)="onSelect(person)" data-target="#deleteModal"></td>
           </tr>
         </tbody>
@@ -52,11 +52,12 @@
   <div class="modal-dialog" role="document">
      <div class="modal-content edit-modal">
           <app-edituser
-            [Name]="Name"
-            [UserName]="UserName"
-            [role]="role"
-            [Email]="Email">
-          </app-edituser>
+          [name]="name"
+          [username]="username"
+          [role]="role"
+          [Email]="email"
+          [id]="id">
+    </app-edituser>
         </div>
       </div>
  </div>
@@ -64,7 +65,7 @@
   <div class="modal-dialog" role="document">
      <div class="modal-content delete-modal">
       <app-deleteuser
-      [username]="username"
+      [name]="name"
       [id]="id">
     </app-deleteuser>
       </div>
