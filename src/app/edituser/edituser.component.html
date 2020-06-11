@@ -3,28 +3,37 @@
     <form [formGroup]="edituserform" (ngSubmit)="onSubmit()">
         <div class="modal-head">Edit User</div>
           <div class="flt Editinput">
+              <div class="lblinputbox">
               <label for="name" >Name</label>
               <input type="text" id="name" class="marginright30" name="name" formControlName="Name" value="Imran Ali" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }">
                 <div *ngIf="submitted && f.Name.errors" class="text-danger">
                   <div *ngIf="f.Name.errors.required">Name is required</div>
                 </div>
+              </div>
+              <div class="lblinputbox">
               <label for="email">Email</label>
               <input type="email" id="email" class="marginright30"  value="jammalamadugu.imran-ali@dxc.com" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
                 <div *ngIf="submitted && f.Email.errors" class="text-danger">
                   <div *ngIf="f.Email.errors.required">Email is required</div>
+                  <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
                 </div>
+              </div>
+              <div class="lblinputbox">
               <label for="pwd">Password</label>
               <input type="password" id="pwd" class="marginright30" value="****************" name="pswd" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                 <div *ngIf="submitted && f.password.errors" class="text-danger">
                   <div *ngIf="f.password.errors.required">Password is required</div>
                   <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
                 </div>
+              </div>
           </div>
            <div class="frt Editinput">
+            <div class="lblinputbox">
               <label for="name">Username/Short ID</label>
               <input type="text"  name="Username" disabled value="jammalamadugu">
+            </div>
+            <div class="lblinputbox">
               <label for="email">Role</label>
-
                 <mat-form-field>
                   <mat-select [(value)]="selected" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
                     <mat-option value="">TVA User</mat-option>
@@ -35,9 +44,9 @@
                 </mat-form-field>
                 <div *ngIf="submitted && f.role.errors" class="text-danger">
                   <div *ngIf="f.role.errors.required">Role is required</div>
+                </div>
               </div>
-
-            <br class="clr" />
+              <div class="lblinputbox">
             <label for="pwd">Confirm Password</label>
             <input type="password" id="Confirmpwd" value="****************" name="Confirm password" formControlName="confirmPassword" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
             <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
@@ -45,6 +54,7 @@
               <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords and Confirm Password not match</div>
            </div>
           </div>
+        </div>
         <br class="clr" />
         <div class="modal-button">
             <button class="secondaryBtn">UPDATE</button>

@@ -51,7 +51,12 @@
 <div class="modal right" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabe">
   <div class="modal-dialog" role="document">
      <div class="modal-content edit-modal">
-          <app-edituser></app-edituser>
+          <app-edituser
+            [Name]="Name"
+            [UserName]="UserName"
+            [role]="role"
+            [Email]="Email">
+          </app-edituser>
         </div>
       </div>
  </div>

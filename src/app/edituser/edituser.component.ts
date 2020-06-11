@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../_helpers/must-match.validator';
 import { Person } from '../person';
@@ -9,6 +9,10 @@ import { Person } from '../person';
   styleUrls: ['./edituser.component.css']
 })
 export class EdituserComponent implements OnInit {
+   @Input() UserName: string;
+   @Input() Name: string;
+   @Input() role: string;
+   @Input() Email: string;
   model: any = {};
   edituserform: FormGroup;
   selected = 'option0';
@@ -20,7 +24,7 @@ export class EdituserComponent implements OnInit {
     this.edituserform = this.formBuilder.group({
       Name: ['', Validators.required],
       Username: ['', Validators.required],
-      Email: ['', Validators.required],
+      Email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
@@ -31,7 +35,7 @@ export class EdituserComponent implements OnInit {
 
 
   get f() { return this.edituserform.controls; }
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
   }
   onReset() {

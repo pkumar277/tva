@@ -13,10 +13,10 @@
             </div>
              </div>
              <div class="createwidth">
-             <input type="email" id="email" class="marginright30"  [(ngModel)]="model.Email" tabindex="3"  placeholder="Email *" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+             <input type="email" id="email" class="marginright30"  [(ngModel)]="model.email" tabindex="3"  placeholder="Email *" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
              <div *ngIf="submitted && f.Email.errors" class="text-danger">
-               <div *ngIf="f.Email.errors.required">Email is required</div>
-               <div *ngIf="f.Email.errors.pattern"> Email not valid. </div>
+              <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.Email.errors.required">Email is required</div>
              </div>
              </div>
              <div class="createwidth">
