@@ -922,7 +922,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 .modal-head{
 font-weight: bold;
 font-size: 30px;
-padding-bottom:30px;
+padding-bottom:20px;
 }
 .modal-head.smallspace{padding-bottom:24px !important;}
 
@@ -999,9 +999,9 @@ margin-right:10px;
   height: 44px;
   padding:0px 16px;
   border: none;
-color: #666666 !important;
-margin-bottom:20px;
-border:2px solid #f5f5f5;
+  color: #666666 !important;
+  margin-top:10px;
+  border:2px solid #f5f5f5;
 
 
 }
@@ -1014,7 +1014,7 @@ border:2px solid #f5f5f5;
   outline: none !important;
 }
 
-.Editinput label{margin:0px 0px 10px 0px; display:block}
+.Editinput label{margin:0px 0px 0px 0px; display:block}
 .marginright30{margin-right:30px; border:1px soldi #000;}
 .error-message{
   padding: 0px 0px 20px 0px;
@@ -1022,21 +1022,23 @@ border:2px solid #f5f5f5;
 }
 
 .success-icon{
-  padding:5px 0px 24px 0px;
+  padding:0px 0px 20px 0px;
 }
 
 .success-text{
   font-weight: bold;
 font-size: 24px;
-padding-bottom:20px;
+padding-bottom:15px;
 }
 
 .modeltxt-normal{
   font-size: 14px;
   color: #000000;
 }
-
-
+.is-invalid{border:2px solid #d0011b !important; background:#fbc3c9 !important; color:#000 !important;}
+.mat-form-field-invalid .mat-form-field-infix{border:2px solid #d0011b !important; background:#fbc3c9 !important; color:#000 !important;}
+.mat-form-field-invalid .mat-form-field-infix .is-invalid{border:none !important;}
+.modalinput input.is-invalid{color:#000 !important}
 .modal{padding-top:50px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(255, 250, 250, 0.9);}
 .modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0; width: 534px;
   box-shadow:1px 1px 1px 1px #ccc; border:none; border-radius:none; border-left:1px solid #ccc;}
@@ -1075,6 +1077,7 @@ font-weight:bold;
 
 
 }
+.success{color:#19cc21;  font-weight:bold; text-align: center; font-size:14px;}
 .tooltip .tooltiptext::before {
 content: "";
 position: absolute;
@@ -1209,7 +1212,7 @@ list-style-type: none;
 html, body { height: 100%; }
 .mat-form-field{font-family:  'GT Walsheim Pro Regular' !important;}
 .cdk-overlay-container{position: fixed; z-index: 99999;}
-.mat-form-field-infix{border:none; width:310px !important; background:#f5f5f5; padding:16px 16px !important; font-weight:bold; border:1px solid #f5f5f5 !important;}
+.mat-form-field-infix{border:none; width:310px !important; background:#f5f5f5; padding:13px 16px !important; font-weight:bold; margin-top:10px; border:1px solid #f5f5f5 !important;}
 .mat-select-value-text{color:#666}
 .mat-select-panel{border:2px solid #000;}
 
@@ -1219,21 +1222,20 @@ html, body { height: 100%; }
 }
 .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
   background-color: #000;
+  opacity:0 !important;
 
-}
+}.mat-form-field-appearance-legacy .mat-form-field-wrapper{ padding-bottom:0px;}
 .mat-form-field.mat-focused .mat-form-field-ripple {
   background-color: #000;
-  border:1px solid #000;
+  opacity: 0 !important;
 }
 
-
-.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow{color: #000;}
 .mat-select-arrow {
   color: #000;
 }
 
-.createwidth{width:340px;}
-.createwidthright{width:280px;}
+.createwidth{width:340px; height:75px; }
+.createwidthright{width:280px; height:75px;}
 /*** Vasanth Style **/
 
 
