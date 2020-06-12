@@ -17,7 +17,10 @@ export class EdituserComponent implements OnInit {
   model: any = {};
   edituserform: FormGroup;
   selected = 'option0';
+  modalVisible = true;
+  modalSuccess = false;
   submitted = false;
+  user;
   userid: string;
   persons: Person[] = [];
   constructor(private formBuilder: FormBuilder, private http: HttpClient ) { }
@@ -40,6 +43,14 @@ export class EdituserComponent implements OnInit {
   get f() { return this.edituserform.controls; }
   onSubmit() {
     this.submitted = true;
+    if (this.edituserform.invalid) {
+      this.modalSuccess = false;
+      return;
+
+    } else{
+      this.modalVisible = false;
+      this.modalSuccess = true;
+    }
     this.http.patch('http://localhost:3000/users/' + this.id,
     {name: this.edituserform.value.name,
       email: this.edituserform.value.email,

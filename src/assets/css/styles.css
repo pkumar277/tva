@@ -1352,32 +1352,5 @@ html, body { height: 100%; }
   border: 2px solid red;
 }
 
-@media (min-height:796px) {
-  footer{height:400px !important}
-}
-
-
-
-@media (min-width:1300px) and (min-height:800px) {
-  body{
-      overflow-y: hidden;
-  }
-
-
-}
-
-
-
-
-@media (min-width:1281px) {
-
-
-  .login-sec{
-
-      background-position-x: right;
-      background-repeat: no-repeat;
-  }
-}
-
 #createModal .text-danger{width:90% }
 #createModal .Editinput input{width:310px}

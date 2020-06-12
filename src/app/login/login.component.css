@@ -27,32 +27,32 @@
     font-weight: bold;
 }
 
-.header .support-user a {    
+.header .support-user a {
     text-decoration: none;
     font-weight: normal;
     border-bottom: 2px solid #FFED00 ;
 }
 
-.header .support-user a:hover {    
+.header .support-user a:hover {
     text-decoration: none;
     font-weight: normal;
     border-bottom: 2px solid #ffffff ;
 }
 
 
-.login-sec{   
-    background-image: url("../../assets/images//Login_BG_Globe.png") no-repeat; 
-    Width: 1280 px;  
+.login-sec{
+    background-image: url("../../assets/images//Login_BG_Globe.png") no-repeat;
+    Width: 1280 px;
     height: 520px ;
     display: flex;
-    flex-wrap: nowrap;    
+    flex-wrap: nowrap;
 }
 
 
 
 .login-sec{
-   
-    background-image: url("../../assets/images//Login_BG_Globe.png"); 
+
+    background-image: url("../../assets/images//Login_BG_Globe.png");
 }
 
 .welcome{
@@ -60,21 +60,21 @@
     width: 50%;
 }
 
-.welcome-text{    
+.welcome-text{
     font-size: 28px;
-    font-weight: normal;    
+    font-weight: normal;
 }
 
 .threat-text{
      font-weight: normal;
      font-size: 36px;
-     padding-bottom: 30px;  
-     
+     padding-bottom: 30px;
+
 }
 
-.desc-text{    
+.desc-text{
     font-size: 18px;
-    
+
     letter-spacing: .3px;
 }
 
@@ -84,7 +84,7 @@
     width: 50%;
     padding-top: 100px;
     padding-left: 50px;
-    
+
 }
 
 .padbottom-40{
@@ -177,7 +177,7 @@
 }
 
 .footer{
-    
+
     height: 80px;
     background-color:#000000;
     color: #ffffff;
@@ -189,14 +189,14 @@
 
 
 
-.footer-terms{    
+.footer-terms{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: normal;
     flex-grow: 9
 }
 
-.footer-copyrights{    
+.footer-copyrights{
     text-align: right;
     float: right;
     font-size: 16px;
@@ -205,7 +205,7 @@
 }
 
 .footer-links{
-   padding:0px 15px 0px 0px;
+   padding:0px 10px 0px 0px;
    position: relative;
 
 }
@@ -213,7 +213,7 @@
 .footer-terms a{
     text-decoration: none;
     color: #ffffff
-  
+
  ;
 }
 
@@ -239,7 +239,7 @@
 }
 
 .modal-text{
-    
+
     font-weight: normal;
 }
 
@@ -342,8 +342,8 @@
     font-weight: bold;
     text-align: center;
     color: #000000;
-    text-transform: uppercase;   
-    border: solid 4px #FFED00;    
+    text-transform: uppercase;
+    border: solid 4px #FFED00;
     cursor: pointer;
 }
 
@@ -363,7 +363,7 @@
 .w3-modal-content {
     width: 490px !important;
     background-color: #ffffff;
-    
+
 }
 
 .modal-dialog{
@@ -372,7 +372,7 @@
 }
 
 button:hover{
-    
+
     cursor: pointer;
 }
 
@@ -430,15 +430,15 @@ input:focus:-webkit-input-placeholder{ color: #000000;}
         overflow-y: hidden;
     }
 
-   
+
 }
 
 
 @media (min-width:1281px) {
-    
+
 
     .login-sec{
-        
+
         background-position-x: right;
         background-repeat: no-repeat;
     }
@@ -472,10 +472,36 @@ footer li {
 
 .footer-links:hover::after {
     width: 100%;
-    
+
 }
 
 
+@media (min-height:796px) {
+  footer{height:400px !important}
+}
+
+
+
+@media (min-width:1300px) and (min-height:800px) {
+  body{
+      overflow-y: hidden;
+  }
+
+
+}
+
+
+
+
+@media (min-width:1281px) {
+
+
+  .login-sec{
+
+      background-position-x: right;
+      background-repeat: no-repeat;
+  }
+}
 .paddingtop-10 {
     padding-top: 10px;
 

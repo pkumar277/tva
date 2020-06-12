@@ -3,8 +3,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from 'src/services/auth.guard';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
-import{ HeaderComponent } from './core/header/header.component'
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 const appRoutes: Routes = [

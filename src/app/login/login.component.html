@@ -30,26 +30,26 @@
 
         <div class="login-form">
             <div style="height: 30px;">
-                
+
                 <div class="invalid-element" *ngIf="emailOrPassowrdInvalid">
                 Your User ID or Password is invalid, please Enter.</div></div>
-            
+
                 <form (ngSubmit)="loginUser()" #f="ngForm" novalidate autocomplete="off">
                     <div class="padbottom-25" style="">
                         <input type="text" name="email" email [(ngModel)]="email" placeholder="User ID" required
                             #remail="ngModel"
                             [ngClass]="{ 'is-invalid': (remail.dirty || remail.touched) &&  remail.errors}" />
-    
+
                     </div>
-    
+
                     <div class="padbottom-40">
                         <input type="password" ngModel name="password" [(ngModel)]="password" placeholder="Password"
                             required #rpassword="ngModel"
-                            
+
                             [ngClass]="{ 'is-invalid': (rpassword.dirty || rpassword.touched) &&  rpassword.errors}" />
-    
+
                     </div>
-    
+
                     <div class="padbottom-40">
                         <button type="submit">Login</button>
                     </div>
@@ -64,3 +64,19 @@
 
     </div>
 </main>
+<!-- footer start-->
+<footer class="footer">
+  <div class="footer-terms">
+          <ul>
+              <li><a class="footer-links" href="#">LEGAL</a></li>
+              <li>|&nbsp;&nbsp;&nbsp;</li>
+              <li><a class="footer-links" href="#">PRIVACY</a></li>
+          </ul>
+
+
+  </div>
+  <div class="footer-copyrights">
+      <div>&copy; DXC Technology</div>
+  </div>
+</footer>
+<!-- footer end-->
