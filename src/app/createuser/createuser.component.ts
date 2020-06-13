@@ -39,13 +39,14 @@ export class CreateuserComponent implements OnInit {
 
   get f() { return this.createuserform.controls; }
 
+
   onSubmit(){
     this.submitted = true;
     if (this.createuserform.invalid) {
       this.modalSuccess = false;
       return;
 
-    } else{
+    } else {
       this.modalVisible = false;
       this.modalSuccess = true;
     }
@@ -60,5 +61,7 @@ export class CreateuserComponent implements OnInit {
   onReset() {
     this.createuserform.reset();
   }
+
+
 
 }

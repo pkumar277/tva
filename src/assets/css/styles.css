@@ -50,6 +50,7 @@ padding-left: 20px;
 .paddtop10{padding-top:10px;}
 .paddingbottom30{padding-bottom:20px;}
 .padbottom-50{padding-bottom:50px;}
+.padbottom-20{padding-bottom:20px;}
 .marginlft20{margin-left:20px;}
 .marginright10{margin-right:10px;}
 .margintop20{margin-top:20px;}
@@ -1074,6 +1075,7 @@ padding-bottom:15px;
 .modal.changepassword{width:534px;}
 .modal-button{margin-top:20px;}
 .edit-modal{width:710px;}
+.edit-modal.successmodal{width:500px;}
 .delete-modal{width:486px}
 .revoke-modal{width:820px}
 .revoke-modal label{display:inline}

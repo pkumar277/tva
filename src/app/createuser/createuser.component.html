@@ -1,80 +1,84 @@
-<div class="modal-header"></div>
-<div class="modal-container" *ngIf="modalVisible">
-  <form [formGroup]="createuserform" (ngSubmit)="onSubmit()">
-    <div class="modal-head">Create User
-      <div *ngIf="modalSuccess" class="success">User Created successfully.</div>
+<div class="modal-content edit-modal" *ngIf="modalVisible">
+    <div class="modal-header"></div>
+    <div class="modal-container">
+          <form [formGroup]="createuserform" (ngSubmit)="onSubmit()">
+                <div class="modal-head">Create User
+                  <div *ngIf="modalSuccess" class="success">User Created successfully.</div>
+                </div>
+
+                  <div class="Editinput flt">
+                      <div class="createwidth">
+                        <input type="text" id="name" name="Name" formControlName="Name" tabindex="1" class="marginright30" value=""  [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" placeholder="Name *">
+                      <div *ngIf="submitted && f.Name.errors" class="text-danger">
+                            <div *ngIf="f.Name.errors.required">Name is required</div>
+                      </div>
+                      </div>
+                      <div class="createwidth">
+                      <input type="email" id="email" class="marginright30"  tabindex="3"  placeholder="Email *" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+                      <div *ngIf="submitted && f.Email.errors" class="text-danger">
+                        <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
+                        <div *ngIf="f.Email.errors.required">Email is required</div>
+                      </div>
+                      </div>
+                      <div class="createwidth">
+                      <input type="password"  id="newPswrd" tabindex="5"  placeholder="Password *" minlength="8" ng-pattern-restrict   name = "newPswrd" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                      <div *ngIf="submitted && f.password.errors" class="text-danger">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+
+                        </div>
+
+                  </div>
+                  <div class="Editinput flt">
+                    <div class="createwidthright">
+                      <input type="text"  name="Username" tabindex="2"  placeholder="Username/Short ID *" formControlName="Username" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }">
+                      <div *ngIf="submitted && f.Username.errors" class="text-danger">
+                        <div *ngIf="f.Username.errors.required">User Name is required</div>
+                      </div>
+                      </div>
+                      <div class="createwidthright">
+                      <mat-form-field>
+                        <mat-select [(value)]="selected" tabindex="4"  formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
+                          <mat-option value="">Select Role *</mat-option>
+                          <mat-option value="Admin">Admin </mat-option>
+                          <mat-option value="User">User</mat-option>
+                          <mat-option value="User uploa">User Upload</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div *ngIf="submitted && f.role.errors" class="text-danger">
+                          <div *ngIf="f.role.errors.required">Role is required</div>
+                      </div>
+                    </div>
+
+                    <div class="createwidthright">
+                        <input type="password" name="Confirm Password" tabindex="6"  placeholder="Confirm Password *" id="cfrmPswrd" formControlName="confirmPassword" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"/>
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+                          <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                          <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords and Confirm Password not match</div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <br class="clr" />
+                    <div class="modal-button Btnbox">
+                      <button class="secondaryBtn">CREATE</button>
+                      <button class="secondaryBtnbdr" (click)="onReset()" data-dismiss="modal">CANCEL</button>
+                    </div>
+        </form>
     </div>
-
-        <div class="Editinput flt">
-            <div class="createwidth">
-              <input type="text" id="name" name="Name" formControlName="Name" tabindex="1" class="marginright30" value="" ngModel  [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" ngModel  placeholder="Name *">
-            <div *ngIf="submitted && f.Name.errors" class="text-danger">
-                  <div *ngIf="f.Name.errors.required">Name is required</div>
-            </div>
-             </div>
-             <div class="createwidth">
-             <input type="email" id="email" class="marginright30"  [(ngModel)]="model.email" tabindex="3"  placeholder="Email *" name="email" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
-             <div *ngIf="submitted && f.Email.errors" class="text-danger">
-              <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
-              <div *ngIf="f.Email.errors.required">Email is required</div>
-             </div>
-             </div>
-             <div class="createwidth">
-             <input type="password"  id="newPswrd" tabindex="5" [(ngModel)]="model.newPswrd" placeholder="Password *" minlength="8" ng-pattern-restrict   name = "newPswrd" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
-             <div *ngIf="submitted && f.password.errors" class="text-danger">
-               <div *ngIf="f.password.errors.required">Password is required</div>
-               <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
-              </div>
-
-              </div>
-
-        </div>
-        <div class="Editinput flt">
-          <div class="createwidthright">
-            <input type="text"  name="Username" tabindex="2"  placeholder="Username/Short ID *" formControlName="Username" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }">
-            <div *ngIf="submitted && f.Username.errors" class="text-danger">
-              <div *ngIf="f.Username.errors.required">User Name is required</div>
-            </div>
-            </div>
-            <div class="createwidthright">
-            <mat-form-field>
-              <mat-select [(value)]="selected" tabindex="4"  formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
-                <mat-option value="">Select Role *</mat-option>
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field>
-             <div *ngIf="submitted && f.role.errors" class="text-danger">
-                 <div *ngIf="f.role.errors.required">Role is required</div>
-             </div>
-          </div>
-
-          <div class="createwidthright">
-               <input type="password" name="Confirm Password" tabindex="6"  placeholder="Confirm Password *" id="cfrmPswrd" formControlName="confirmPassword" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"/>
-               <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
-                 <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                 <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords and Confirm Password not match</div>
-              </div>
-          </div>
-        </div>
-
-        <br class="clr" />
-          <div class="modal-button Btnbox">
-            <button class="secondaryBtn">CREATE</button>
-            <button class="secondaryBtnbdr" (click)="onReset()" data-dismiss="modal">CANCEL</button>
-          </div>
-</form>
 </div>
-<div class="modal-container" *ngIf="modalSuccess">
-  <div class="modal-head">Create User </div>
-<div class="success-icon"><img src="assets/images/Success.png"></div>
-<div class="success-text">Success!</div>
-<div class="modeltxt-normal padbottom-50">
-  User <strong>{{user}}</strong> created successfully
-</div>
-
-<div class="modal-button">
-   <button class="secondaryBtn" (click)="onReset()" data-dismiss="modal">Close</button>
-</div>
+<div class="modal-content edit-modal successmodal" *ngIf="modalSuccess">
+  <div class="modal-header"></div>
+  <div class="modal-container">
+      <div class="modal-head">Create User </div>
+      <div class="success-icon"><img src="assets/images/Success.png"></div>
+      <div class="success-text">Success!</div>
+      <div class="modeltxt-normal padbottom-20">
+        User <strong>{{user}}</strong> created successfully
+      </div>
+      <div class="modal-button">
+      <button class="secondaryBtn" (click)="onReset()" data-dismiss="modal">Close</button>
+      </div>
+  </div>
 </div>

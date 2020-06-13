@@ -94,8 +94,7 @@ get f() { return this.changepasswordform.controls; }
       this.modalSuccess = false;
       return;
 
-    }
-    else{
+    } else{
       this.oldpass = false;
       this.modalVisible = false;
       this.modalSuccess = true;

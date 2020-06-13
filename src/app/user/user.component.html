@@ -43,30 +43,26 @@
 
 <div class="modal right" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabe">
   <div class="modal-dialog" role="document">
-     <div class="modal-content edit-modal create">
           <app-createuser></app-createuser>
-        </div>
-      </div>
+  </div>
 </div>
 <div class="modal right" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabe">
   <div class="modal-dialog" role="document">
-     <div class="modal-content edit-modal">
-          <app-edituser
+      <app-edituser
           [name]="name"
           [username]="username"
           [role]="role"
-          [Email]="email"
+          [email]="email"
           [id]="id">
-    </app-edituser>
-        </div>
-      </div>
- </div>
+      </app-edituser>
+  </div>
+</div>
 <div class="modal right" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabe">
   <div class="modal-dialog" role="document">
      <div class="modal-content delete-modal">
       <app-deleteuser
-      [name]="name"
-      [id]="id">
+            [name]="name"
+            [id]="id">
     </app-deleteuser>
       </div>
   </div>
