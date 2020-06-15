@@ -11,19 +11,21 @@ export class DeleteuserComponent implements OnInit {
   selectedRow: Person[];
   @Input() name: string;
   @Input() id: string;
+  @Input () clientName: string;
   persons: Person[] = [];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
+  console.log(this.clientName);
   }
 
 
- /// deleteRowSelected(){
-    //debugger
-      // this.http.delete('http://localhost:3000/users/' + this.id)
-       ///    .map((response:Response) => response.json())
-       //  .subscribe(person =>{
-       //  console.log(person)
-      // })
-  // }
+  deleteRowSelected(){
+      this.http.delete('http://localhost:3000/users/' + this.id)
+       .subscribe(person => {
+       console.log(person);
+     });
+  }
 }

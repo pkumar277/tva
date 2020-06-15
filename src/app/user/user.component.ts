@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
    username: string;
    email: string;
    accountName: string;
+   clientName: string;
    role: string;
    dtOptions: DataTables.Settings = {};
    persons: Person[] = [];
@@ -81,6 +82,7 @@ private extractData(res: Response) {
   onSelect(selectedItem: any) {
     this.name = selectedItem.name;
     this.id = selectedItem.id;
+    this.clientName = selectedItem.clientName;
 
   }
 
