@@ -8,14 +8,16 @@ import { LoginService } from '../../../services/login.service';
 })
 export class HeaderComponent implements OnInit {
   userdata: string;
+  userrole: string;
 
   constructor(private loginservice: LoginService) { }
 
   ngOnInit() {
 
-   
+
     this.userdata = this.loginservice.currentUserValue.username;
-    //console.log('data' + '' + this.userdata);
+    this.userrole = this.loginservice.currentUserValue.role;
+    //console.log('data' + '' + this.userrole);
 }
 
 
