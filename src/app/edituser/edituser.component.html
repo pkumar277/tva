@@ -6,26 +6,15 @@
               <div class="flt Editinput">
                   <div class="lblinputbox">
                   <label for="name" >Name</label>
-                  <input type="text" id="name" class="marginright30" name="name" tabindex="1" formControlName="name" value={{name}} [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-                    <div *ngIf="submitted && f.name.errors" class="text-danger">
-                      <div *ngIf="f.name.errors.required">Name is required</div>
-                    </div>
+                  <input type="text" id="name" class="marginright30" name="name" tabindex="1" formControlName="name" value={{name}} >
                   </div>
                   <div class="lblinputbox">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="marginright30" name="email" value={{email}} tabindex="2" formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
-                    <div *ngIf="submitted && f.Email.errors" class="text-danger">
-                        <div *ngIf="f.Email.errors.required">Email is required</div>
-                        <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
-                    </div>
+                    <input type="email" id="email" class="marginright30" name="email" value={{email}} tabindex="2" formControlName="Email">
                   </div>
                   <div class="lblinputbox">
                   <label for="pwd">Password</label>
-                  <input type="password" id="pwd" class="marginright30" tabindex="4" value="" name="pswd" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-                    <div *ngIf="submitted && f.password.errors" class="text-danger">
-                      <div *ngIf="f.password.errors.required">Password is required</div>
-                      <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
-                    </div>
+                  <input type="password" id="pwd" class="marginright30" tabindex="4" value="" name="pswd" formControlName="password">
                   </div>
               </div>
               <div class="frt Editinput">
@@ -36,24 +25,18 @@
                 <div class="lblinputbox">
                   <label for="email">Role</label>
                   <mat-form-field>
-                    <mat-select [(value)]="selected" tabindex="3"   formControlName="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" >
+                    <mat-select [(value)]="selected" tabindex="3"   formControlName="role" >
                       <mat-option value="">Select Role *</mat-option>
                       <mat-option value="Admin">Admin</mat-option>
                       <mat-option value="User">User</mat-option>
                       <mat-option value="Upload user">Upload user</mat-option>
                     </mat-select>
                   </mat-form-field>
-                  <div *ngIf="submitted && f.role.errors" class="text-danger">
-                      <div *ngIf="f.role.errors.required">Role is required</div>
-                  </div>
                   </div>
                   <div class="lblinputbox">
                 <label for="pwd">Confirm Password</label>
-                <input type="password" id="Confirmpwd" tabindex="5" value="" name="Confirm password" formControlName="confirmPassword" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
-                <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
-                  <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                  <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords and Confirm Password not match</div>
-              </div>
+                <input type="password" id="Confirmpwd" tabindex="5" value="" name="Confirm password" formControlName="confirmPassword">
+
               </div>
             </div>
             <br class="clr" />

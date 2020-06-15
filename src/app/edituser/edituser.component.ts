@@ -34,10 +34,6 @@ export class EdituserComponent implements OnInit {
       name: ['', Validators.required],
       Email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
-  }, {
-      validator: MustMatch('password', 'confirmPassword')
   });
   }
 
@@ -47,16 +43,15 @@ export class EdituserComponent implements OnInit {
     this.submitted = true;
 
     if (this.edituserform.invalid) {
-      alert('test12');
       this.modalVisible1 = true;
       this.modalSuccess1 = false;
       return;
 
     }   else {
-      alert('test');
       this.modalVisible1 = false;
       this.modalSuccess1 = true;
      }
+     this.user=this.edituserform.value.Name;
     this.http.patch('http://localhost:3000/users/' + this.id,
     {name: this.edituserform.value.name,
       email: this.edituserform.value.Email,
