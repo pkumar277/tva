@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
    userList: any;
    users: User[];
    id: number;
+   errorVisible: false;
    dtTrigger: Subject<any> = new Subject<any>();
    service: any;
   constructor(private http: Http, private loginservice: LoginService) { }

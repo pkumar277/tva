@@ -18,13 +18,11 @@ export class DeleteuserComponent implements OnInit {
 
   ngOnInit() {
 
+
   }
 
 
   deleteRowSelected(){
-    if (this.clientName !==null){
-      alert('test');
-    }
       this.http.delete('http://localhost:3000/users/' + this.id)
        .subscribe(person => {
        console.log(person);

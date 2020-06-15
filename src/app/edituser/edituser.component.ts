@@ -51,7 +51,7 @@ export class EdituserComponent implements OnInit {
       this.modalVisible1 = false;
       this.modalSuccess1 = true;
      }
-     this.user=this.edituserform.value.Name;
+     this.user=this.edituserform.value.name;
     this.http.patch('http://localhost:3000/users/' + this.id,
     {name: this.edituserform.value.name,
       email: this.edituserform.value.Email,
