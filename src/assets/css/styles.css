@@ -1184,6 +1184,7 @@ option:focus{background:#000 !important;}
   padding:20px 20px 0px;
   display: flex;
   align-items: stretch;
+  margin-top:30px;
 }
 .footer-terms{
   font-size: 16px;

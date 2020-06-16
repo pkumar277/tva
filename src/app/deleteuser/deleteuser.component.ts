@@ -19,26 +19,19 @@ export class DeleteuserComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.changeEvent.emit('test');
-
 
   }
 
-
-
-
-  deleteRowSelected(){
-
+  deleteRowSelected() {
+    this.changeEvent.emit (this.clientName);
+    //console.log(this.clientName);
     if ( this.clientName === undefined) {
-      alert('test');
       this.http.delete('http://localhost:3000/users/' + this.id)
        .subscribe(person => {
-       console.log(person);
+       //console.log(person);
      });
-    }
-    else{
+    }  else {
 
-
-    }
+  }
   }
 }

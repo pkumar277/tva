@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
    errorVisible: false;
    dtTrigger: Subject<any> = new Subject<any>();
    service: any;
-   data : string = '';
+   deletedata : string = undefined;
   constructor(private http: Http, private loginservice: LoginService) { }
 
   ngOnInit(): void {
@@ -97,7 +97,7 @@ private extractData(res: Response) {
     this.email = selectedItem.email;
 
   }
-  onDataChange(data){
-    this.data = data;
+  onDataChange(deletedata){
+    this.deletedata = deletedata;
 }
 }
