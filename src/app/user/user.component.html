@@ -1,11 +1,6 @@
 <app-header></app-header>
 <app-navigation></app-navigation>
 <section class="maincontainer clr">
-  <div class="delete-errorinfo" *ngIf="errorVisible" >
-    <div class="txtleft flt"><img src="images/ErrorInformation.png" class="marginright10" title="Error" /><Span>Delete User Error! Please ensure to revoke account mapping before deleting the user ID. Please try again.</Span></div>
-    <div class="txtright frt"><img src="images/CloseInformation.png" title="close" class="closeicon"/></div>
-    <br class="clr" />
-  </div>
   <div class="createuser test"><a href="#" data-toggle="modal" data-backdrop="static" data-target="#createModal">CREATE USER</a></div>
   <table id="example" class="display userTable" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="width:100%">
       <thead>
